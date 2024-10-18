@@ -1,6 +1,6 @@
 SELECT 
-    c.customer_name AS customer_name,
-    PRINTF('$%.2f', SUM(s.price_per_month * s.subscription_length)) AS total_amount_due
+    c.customer_name AS Customer,
+    PRINTF('$%.2f',SUM(s.price_per_month * s.subscription_length)) AS "Amount Due"
 FROM 
     orders o
 JOIN 
@@ -12,3 +12,4 @@ WHERE
     AND s.description = 'Fashion Magazine'
 GROUP BY 
     c.customer_name;
+
